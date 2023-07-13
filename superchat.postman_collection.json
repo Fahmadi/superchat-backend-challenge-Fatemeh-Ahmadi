@@ -1,0 +1,682 @@
+{
+	"info": {
+		"_postman_id": "56e52354-8ea6-4a17-bb69-7dccaf7343d0",
+		"name": "Superchat",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18453130"
+	},
+	"item": [
+		{
+			"name": "list contacts",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\":\"Fatemeh\",\n    \"email\": \"f.ahmadi@gmail.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/contacts",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"contacts"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "List contacts",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/contacts",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"contacts"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "381"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"17d-R5es1c836wv0Xuac5Dmnz8Izukg\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 12 Jul 2023 13:30:51 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 1,\n        \"name\": \"Ali\",\n        \"email\": \"ali@gmail.com\",\n        \"createdAt\": \"2023-07-12T13:18:20.456Z\",\n        \"updatedAt\": \"2023-07-12T13:18:20.456Z\"\n    },\n    {\n        \"id\": 2,\n        \"name\": \"Fateme\",\n        \"email\": \"Fateme@gmail.com\",\n        \"createdAt\": \"2023-07-12T13:18:39.336Z\",\n        \"updatedAt\": \"2023-07-12T13:18:39.336Z\"\n    },\n    {\n        \"id\": 3,\n        \"name\": \"Mona\",\n        \"email\": \"mona@gmail.com\",\n        \"createdAt\": \"2023-07-12T13:21:30.779Z\",\n        \"updatedAt\": \"2023-07-12T13:21:30.779Z\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "create contact",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Hamid\",\n    \"email\": \"ha@gmail.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/contacts",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"contacts"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "create contact response",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Mona\",\n    \"email\": \"mona@gmail.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/contacts",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"contacts"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "125"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"7d-ASAMd6QdsKnEWE4RtMZy1BlxqBU\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 12 Jul 2023 13:21:30 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 3,\n    \"name\": \"Mona\",\n    \"email\": \"mona@gmail.com\",\n    \"updatedAt\": \"2023-07-12T13:21:30.779Z\",\n    \"createdAt\": \"2023-07-12T13:21:30.779Z\"\n}"
+				}
+			]
+		},
+		{
+			"name": "send message( with placeholders)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"senderId\": 1,\n    \"receiverId\": 3,\n    \"text\": \"Hi Mona, how are you?I'm {{contact_name}}\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/conversations/messages",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"conversations",
+						"messages"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "send message( with bitcoin_price placeholders)",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"senderId\": 1,\n    \"receiverId\": 2,\n    \"text\": \"Hello Today bicoin price is {{bitcoin_price}}. do you know?\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/conversations/messages",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"conversations",
+								"messages"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "196"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"c4-MiqdqX037G9FzqpgRu/Mu1qNGx0\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 12 Jul 2023 13:19:03 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"createdAt\": \"2023-07-12T13:19:03.580Z\",\n    \"id\": 1,\n    \"text\": \"Hello Today bicoin price is 30,753.8820. do you know?\",\n    \"conversationId\": 1,\n    \"senderId\": 1,\n    \"receiverId\": 2,\n    \"updatedAt\": \"2023-07-12T13:19:03.580Z\"\n}"
+				},
+				{
+					"name": "send message( with contact_name placeholders)",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"senderId\": 1,\n    \"receiverId\": 3,\n    \"text\": \"Hi Mona, how are you?I'm {{contact_name}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/conversations/messages",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"conversations",
+								"messages"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "171"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"ab-kBYi+DlQGLn3PitlacIK0ilX9oo\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 12 Jul 2023 13:23:41 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"createdAt\": \"2023-07-12T13:23:41.878Z\",\n    \"id\": 3,\n    \"text\": \"Hi Mona, how are you?I'm Ali\",\n    \"conversationId\": 2,\n    \"senderId\": 1,\n    \"receiverId\": 3,\n    \"updatedAt\": \"2023-07-12T13:23:41.878Z\"\n}"
+				},
+				{
+					"name": "send message( when receiver not exist)",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"senderId\": 1,\n    \"receiverId\": 4,\n    \"text\": \"Hello\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/conversations/messages",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"conversations",
+								"messages"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "38"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"26-ElfiNcLdhHqIRiQTQ6dYo6G2Z/Y\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 12 Jul 2023 13:30:05 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"receiver contact not found\"\n}"
+				}
+			]
+		},
+		{
+			"name": "get all messages in a conversation( between 2 people)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/conversations/messages/1/2",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"conversations",
+						"messages",
+						"1",
+						"2"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "get messages in a conversation",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/conversations/messages/1/2",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"conversations",
+								"messages",
+								"1",
+								"2"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "379"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"17b-RIevbD77/OxoEnZKfcrGNQYqYBI\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 12 Jul 2023 13:20:41 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 1,\n        \"text\": \"Hello Today bicoin price is 30,753.8820. do you know?\",\n        \"conversationId\": 1,\n        \"senderId\": 1,\n        \"receiverId\": 2,\n        \"createdAt\": \"2023-07-12T13:19:03.580Z\",\n        \"updatedAt\": \"2023-07-12T13:19:03.580Z\"\n    },\n    {\n        \"id\": 2,\n        \"text\": \"Oh thank you, I should check it again\",\n        \"conversationId\": 1,\n        \"senderId\": 2,\n        \"receiverId\": 1,\n        \"createdAt\": \"2023-07-12T13:20:17.643Z\",\n        \"updatedAt\": \"2023-07-12T13:20:17.643Z\"\n    }\n]"
+				},
+				{
+					"name": "get messages in a conversation(when receiver does not exist)",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/conversations/messages/1/4",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"conversations",
+								"messages",
+								"1",
+								"4"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "38"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"26-ElfiNcLdhHqIRiQTQ6dYo6G2Z/Y\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 12 Jul 2023 13:32:45 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"receiver contact not found\"\n}"
+				}
+			]
+		},
+		{
+			"name": "get all conversation for a contact",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": [
+				{
+					"name": "get all conversation for a cotact",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/conversations/allMessages/1",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"conversations",
+								"allMessages",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "563"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"233-WRrI0gSLOVj2Ud9hd2yTNbGTcMk\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 12 Jul 2023 13:34:02 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"1\": [\n        {\n            \"id\": 1,\n            \"text\": \"Hello Today bicoin price is 30,753.8820. do you know?\",\n            \"conversationId\": 1,\n            \"senderId\": 1,\n            \"receiverId\": 2,\n            \"createdAt\": \"2023-07-12T13:19:03.580Z\",\n            \"updatedAt\": \"2023-07-12T13:19:03.580Z\"\n        },\n        {\n            \"id\": 2,\n            \"text\": \"Oh thank you, I should check it again\",\n            \"conversationId\": 1,\n            \"senderId\": 2,\n            \"receiverId\": 1,\n            \"createdAt\": \"2023-07-12T13:20:17.643Z\",\n            \"updatedAt\": \"2023-07-12T13:20:17.643Z\"\n        }\n    ],\n    \"2\": [\n        {\n            \"id\": 3,\n            \"text\": \"Hi Mona, how are you?I'm Ali\",\n            \"conversationId\": 2,\n            \"senderId\": 1,\n            \"receiverId\": 3,\n            \"createdAt\": \"2023-07-12T13:23:41.878Z\",\n            \"updatedAt\": \"2023-07-12T13:23:41.878Z\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"message\": {\n        \"from\": \"whatsapp:+1234567890\",\n        \"to\": \"whatsapp:+9876543210\",\n        \"timestamp\": 1678392917,\n        \"text\": \"Hello, this is a message from WhatsApp!\",\n        \"type\": \"text\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/webhook",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"webhook"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "whatsapp webhook",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"message\": {\n        \"from\": \"whatsapp:+1234567890\",\n        \"to\": \"whatsapp:+9876543210\",\n        \"timestamp\": 1678392917,\n        \"text\": \"Hello, this is a message from WhatsApp!\",\n        \"type\": \"text\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/webhook",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"webhook"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 12 Jul 2023 13:36:37 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						},
+						{
+							"key": "Content-Length",
+							"value": "0"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
+		}
+	]
+}

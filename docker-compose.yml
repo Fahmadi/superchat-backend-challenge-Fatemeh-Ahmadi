@@ -1,0 +1,36 @@
+version: '3'
+
+networks:
+  crm-network:
+    driver: bridge
+
+services:
+  postgres:
+    image: postgres
+    container_name: postgres-db
+    ports:
+      - 5432:5432
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    networks:
+      - crm-network
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=admin
+      - POSTGRES_DB=superchat
+      - POSTGRES_HOST=localhost
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: superchat-app
+    ports:
+      - 3000:3000
+    depends_on:
+      - postgres
+    networks:
+      - crm-network
+
+volumes:
+  postgres-data:
